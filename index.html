@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرجع تخصصی آموزش هکینگ | علی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+        
+        body { 
+            font-family: 'Vazirmatn', sans-serif; 
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            color: white; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .card-glow-blue:hover { box-shadow: 0 0 40px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+        .card-glow-purple:hover { box-shadow: 0 0 40px rgba(168, 85, 247, 0.3); border-color: #a855f7; }
+        .card-glow-red:hover { box-shadow: 0 0 40px rgba(239, 68, 68, 0.3); border-color: #ef4444; }
+
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .modal { display: none; position: fixed; inset: 0; z-index: 50; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); }
+        
+        .animate-pulse-slow { animation: pulse 4s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+        .package-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #1e293b; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <header class="text-center mb-16 relative">
+        <div class="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full"></div>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 mb-6 relative text-center">
+            فروشگاه پکیج‌های تخصصی هکینگ
+        </h1>
+        <p class="text-gray-400 text-xl font-medium animate-pulse-slow text-center">آموزش حرفه‌ای و صفر تا صد - دریافت در واتس‌اپ</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10 mb-20 text-center">
+        <div class="package-card card-glow-blue bg-slate-900/60 rounded-[2.5rem] p-10 transform hover:-translate-y-4">
+            <div class="text-6xl mb-6">📱</div>
+            <h2 class="text-3xl font-bold mb-3">هک پکیج موبایل</h2>
+            <p class="text-blue-400 text-sm mb-8">نفوذ و کنترل کامل گوشی</p>
+            <button onclick="openModal('mobile')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-blue-900/30">مشاهده جزئیات</button>
+        </div>
+
+        <div class="package-card card-glow-purple bg-slate-900/60 rounded-[2.5rem] p-10 transform hover:-translate-y-4 border-purple-500/20">
+            <div class="text-6xl mb-6">🔐</div>
+            <h2 class="text-3xl font-bold mb-3">هک شبکه اجتماعی</h2>
+            <p class="text-purple-400 text-sm mb-8">دسترسی به اکانت‌های مجازی</p>
+            <button onclick="openModal('social')" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-purple-900/30">مشاهده جزئیات</button>
+        </div>
+
+        <div class="package-card card-glow-red bg-slate-900/60 rounded-[2.5rem] p-10 transform hover:-translate-y-4 text-white">
+            <div class="text-6xl mb-6">🎮</div>
+            <h2 class="text-3xl font-bold mb-3">هک بازی آنلاین</h2>
+            <p class="text-red-400 text-sm mb-8">تقلب و دریافت منابع بازی</p>
+            <button onclick="openModal('games')" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-red-900/30">مشاهده جزئیات</button>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-6 text-center">
+        <a href="https://whatsapp.com/channel/0029Vb6VjPVHVvTWnVzn4q0B" target="_blank" class="block bg-gradient-to-l from-green-600/20 to-blue-600/20 border border-green-500/30 p-8 rounded-[2.5rem] hover:scale-[1.02] transition-transform shadow-2xl">
+            <span class="text-green-400 font-black text-xl block mb-2">💎 جهت اعتماد و مشاهده رضایت مشتریان 💎</span>
+            <span class="text-gray-300 text-sm">برای عضویت در کانال رسمی واتس‌اپ و دیدن فعالیت‌ها اینجا کلیک کنید</span>
+        </a>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-10">
+        <div class="bg-slate-900/80 border border-slate-700 p-8 rounded-[2.5rem] shadow-2xl">
+            <h3 class="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-3">
+                <span>ℹ️</span> اطلاعات درباره آموزش‌ها و نحوه پرداخت
+            </h3>
+            <div class="text-gray-300 text-right leading-relaxed space-y-4 text-sm md:text-base">
+                <p>✅ <strong>تضمین اصالت:</strong> تمام آموزش‌های ما کاملاً واقعی، تست شده و با متد مستقیم می‌باشند. هیچ‌گونه فریب یا فایل غیرکاربردی در پکیج‌ها وجود ندارد.</p>
+                
+                <p>💸 <strong>نحوه پرداخت:</strong> ابتدا باید هزینه آموزش را به شماره‌ای که در بخش خرید نمایش داده می‌شود پرداخت کنید. روش‌های مجاز پرداخت شامل موارد زیر است:</p>
+                
+                <ul class="list-disc list-inside space-y-2 pr-4 border-r-2 border-green-500/30">
+                    <li>واریز مستقیم از طریق اپلیکیشن <strong>حساب‌پی (HesabPay)</strong></li>
+                    <li>ارسال <strong>کردیت (کارت)</strong> سیم‌کارت <strong>اتصالات</strong> (فقط اتصالات پذیرفته می‌شود)</li>
+                </ul>
+
+                <p>📱 <strong>توضیح شماره تماس:</strong> شما می‌توانید به شماره <strong>+93780468833</strong> هم پول در حساب‌پی ارسال کنید و هم کردیت اتصالات بفرستید. سایر شبکه‌ها فعلاً مقدور نیست.</p>
+                
+                <p>📸 <strong>دریافت آموزش:</strong> پس از پرداخت، بلافاصله از رسید یا پیامک تایید عکس بگیرید و از طریق دکمه «پرداخت کردم» در واتس‌اپ ارسال کنید تا لینک مستقیم آموزش برایتان فرستاده شود.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center pb-10 text-gray-600">
+        <p>© 2026 پلتفرم آموزشی کینگ علی | تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <div id="mainModal" class="modal p-4">
+        <div class="glass max-w-lg w-full rounded-[3rem] p-10 relative">
+            <button onclick="closeModal()" class="absolute top-6 left-6 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
+            <div id="step1">
+                <h3 class="text-2xl font-bold mb-8 text-center text-white text-center">لیست آموزش‌های موجود</h3>
+                <div id="itemsList" class="space-y-4 text-white"></div>
+            </div>
+            <div id="step2" class="hidden text-center text-white text-center">
+                <h3 class="text-3xl font-bold mb-10 text-[#22c55e]">دستورالعمل پرداخت</h3>
+                <div class="bg-black/40 p-8 rounded-[2rem] mb-8 text-right space-y-6 border border-white/5">
+                    <p class="text-xl font-bold flex items-center justify-between">
+                        <span id="finalPrice" class="text-yellow-400"></span>
+                        <span>💰 مبلغ قابل پرداخت:</span>
+                    </p>
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-gray-400 mb-2">📞 شماره تماس جهت ارسال پول/کردیت:</p>
+                        <p class="text-3xl tracking-widest font-black">+93780468833</p>
+                    </div>
+                    <div class="bg-yellow-500/10 p-4 rounded-2xl border border-yellow-500/20 text-xs text-gray-300">
+                        ⚠️ به شماره بالا کردیت اتصالات بفرستید یا از حساب‌پی پول واریز کنید، سپس اسکرین‌شات رسید را بفرستید.
+                    </div>
+                </div>
+                <a id="payBtn" href="#" target="_blank" class="block w-full bg-[#22c55e] hover:bg-[#16a34a] text-black font-black py-5 rounded-[1.5rem] text-xl mb-6 transition-all shadow-xl shadow-green-900/20">
+                    ✅ پرداخت کردم
+                </a>
+                <button onclick="backToStep1()" class="text-gray-400 hover:text-white text-sm underline underline-offset-8">برگشت به لیست</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            mobile: ["هک کامل گوشی", "هک تماس‌های موبایل", "هک پیامک‌های گوشی", "هک گالری موبایل", "هک کنترل راه دور"],
+            social: ["هک تلگرام", "هک واتساپ", "هک فیسبوک", "هک تیک‌تاک", "هک یوتیوب"],
+            games: ["هک اکانت پابجی", "هک یوسی پابجی", "هک اکانت کلش", "هک جم کلش", "هک کالاف دیوتی"]
+        };
+
+        const modal = document.getElementById('mainModal');
+        const itemsList = document.getElementById('itemsList');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+
+        function openModal(type) {
+            itemsList.innerHTML = '';
+            data[type].forEach(item => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-right p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 transition flex justify-between items-center";
+                btn.innerHTML = `<span>${item}</span> <span class="text-green-400">⬅️</span>`;
+                btn.onclick = () => showPayment(item);
+                itemsList.appendChild(btn);
+            });
+            modal.style.display = 'flex';
+        }
+
+        function showPayment(itemName) {
+            const price = Math.floor(Math.random() * (400 - 200 + 1) + 200);
+            document.getElementById('finalPrice').innerText = price + " افغانی";
+            const message = `سلام علی جان، من پکیج "${itemName}" را انتخاب کردم و مبلغ ${price} افغانی را پرداخت کردم. این هم رسید من:`;
+            document.getElementById('payBtn').href = `https://wa.me/93780468833?text=${encodeURIComponent(message)}`;
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+        }
+
+        function backToStep1() { step2.classList.add('hidden'); step1.classList.remove('hidden'); }
+        function closeModal() { modal.style.display = 'none'; backToStep1(); }
+        window.onclick = (e) => { if (e.target == modal) closeModal(); }
+    </script>
+</body>
+</html>
