@@ -26,11 +26,32 @@
         .animate-pulse-slow { animation: pulse 4s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
+        body.light-mode {
+    background: radial-gradient(circle at center, #e2e8f0 0%, #f8fafc 100%);
+    color: #0f172a;
+}
+
+.light-mode .glass, .light-mode .package-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1e293b;
+}
+
+.light-mode .text-gray-400, .light-mode .text-gray-300 {
+    color: #475569;
+}
+
+.light-mode h1, .light-mode h2 {
+    color: #0f172a;
+}
         .package-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #1e293b; }
     </style>
 </head>
 <body class="p-6 md:p-12">
-
+<button onclick="toggleTheme()" class="fixed top-6 left-6 z-50 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full shadow-2xl hover:scale-110 transition-all" id="theme-btn">
+    <span id="theme-icon">🌙</span>
+    
+</button>
     <header class="text-center mb-16 relative">
         <div class="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full"></div>
         <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 mb-6 relative text-center">
@@ -68,7 +89,19 @@
             <span class="text-gray-300 text-sm">برای عضویت در کانال رسمی واتس‌اپ و دیدن فعالیت‌ها اینجا کلیک کنید</span>
         </a>
     </div>
-
+<div class="max-w-4xl mx-auto mb-12">
+    <div class="bg-slate-900/40 border border-white/10 p-4 rounded-[2.5rem] shadow-2xl overflow-hidden">
+        <h3 class="text-xl font-bold text-center mb-6 text-green-400 flex items-center justify-center gap-2">
+            🎥 ویدیوی راهنمای خرید و دریافت پکیج
+        </h3>
+        <div class="relative w-full aspect-video rounded-[1.5rem] overflow-hidden border border-white/5">
+            <video controls class="w-full h-full object-cover">
+                <source src="vedio-hack001.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+        </div>
+    </div>
+</div>
     <div class="max-w-4xl mx-auto mb-10">
         <div class="bg-slate-900/80 border border-slate-700 p-8 rounded-[2.5rem] shadow-2xl">
             <h3 class="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-3">
@@ -90,7 +123,43 @@
             </div>
         </div>
     </div>
+<div class="max-w-7xl mx-auto mb-20 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+        📸 نمونه کارها و اثبات عملکرد
+    </h3>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <div class="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-2 transition-all hover:border-blue-500/50">
+            <img src="hack4.jpg" alt="رضایت مشتری" class="w-full h-64 object-cover rounded-[2rem] transition duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6 rounded-[2.5rem]">
+                <span class="text-white font-bold text-sm">رضایت از خرید آموزش هک</span>
+            </div>
+        </div>
 
+        <div class="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-2 transition-all hover:border-purple-500/50">
+            <img src="wifi1.jpg" alt="رضایت مشتری" class="w-full h-64 object-cover rounded-[2rem] transition duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6 rounded-[2.5rem]">
+                <span class="text-white font-bold text-sm">رضایت از خرید آموزش هک Wifi</span>
+            </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-2 transition-all hover:border-red-500/50">
+            <img src="watsapp2.jpg" alt="رضایت مشتری" class="w-full h-64 object-cover rounded-[2rem] transition duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6 rounded-[2.5rem]">
+                <span class="text-white font-bold text-sm">رضایت از خرید آموزش هک واتساپ</span>
+            </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-2 transition-all hover:border-green-500/50">
+            <img src="pubg3.jpg" alt="رضایت مشتری" class="w-full h-64 object-cover rounded-[2rem] transition duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6 rounded-[2.5rem]">
+                <span class="text-white font-bold text-sm">رضایت از خرید هک هدشات PUBG</span>
+            </div>
+        </div>
+
+    </div>
+</div>
     <footer class="text-center pb-10 text-gray-600">
         <p>© 2026 پلتفرم آموزشی کینگ علی | تمامی حقوق محفوظ است</p>
     </footer>
@@ -161,6 +230,20 @@
         function backToStep1() { step2.classList.add('hidden'); step1.classList.remove('hidden'); }
         function closeModal() { modal.style.display = 'none'; backToStep1(); }
         window.onclick = (e) => { if (e.target == modal) closeModal(); }
+        function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    // تغییر کلاس کلاس بادی
+    body.classList.toggle('light-mode');
+    
+    // تغییر آیکون دکمه
+    if (body.classList.contains('light-mode')) {
+        icon.innerText = '☀️';
+    } else {
+        icon.innerText = '🌙';
+    }
+}
     </script>
 </body>
 </html>
